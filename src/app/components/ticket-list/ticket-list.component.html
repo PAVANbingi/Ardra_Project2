@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2 class="mb-4 text-center fw-bold">🎫 Customer Support Ticket Dashboard</h2>
+
+  <!-- Filter Component -->
+  <app-ticket-filter (filterChange)="onFilterChange($event)"></app-ticket-filter>
+
+  <!-- Ticket Grid -->
+  <div class="row mt-4 g-4">
+    <ng-container *ngIf="filteredTickets.length > 0; else noTickets">
+      <div class="col-md-6 col-lg-4" *ngFor="let ticket of filteredTickets">
+        <app-ticket-item [ticket]="ticket"></app-ticket-item>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- No tickets message -->
+  <ng-template #noTickets>
+    <div class="alert alert-info text-center p-4 mt-5 rounded-3 shadow-sm">
+      <i class="bi bi-info-circle me-2"></i> No tickets match the selected criteria.
+    </div>
+  </ng-template>
+</div>

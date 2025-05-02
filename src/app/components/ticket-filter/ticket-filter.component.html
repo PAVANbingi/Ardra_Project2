@@ -1,0 +1,42 @@
+<div class="card p-4 mb-4 shadow rounded-3 border-0">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">🎛️ Filter Tickets</h5>
+    <button class="btn btn-sm btn-outline-secondary" (click)="clearFilters()">
+      <i class="bi bi-x-circle me-1"></i> Reset
+    </button>
+  </div>
+
+  <div class="row g-3">
+    <!-- Status Filter -->
+    <div class="col-md-6">
+      <label for="statusFilter" class="form-label fw-semibold">Status</label>
+      <select
+        id="statusFilter"
+        class="form-select form-select-sm"
+        [(ngModel)]="status"
+        (change)="onFilterChange()"
+      >
+        <option value="">All Statuses</option>
+        <option value="Open">Open</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Closed">Closed</option>
+      </select>
+    </div>
+
+    <!-- Priority Filter -->
+    <div class="col-md-6">
+      <label for="priorityFilter" class="form-label fw-semibold">Priority</label>
+      <select
+        id="priorityFilter"
+        class="form-select form-select-sm"
+        [(ngModel)]="priority"
+        (change)="onFilterChange()"
+      >
+        <option value="">All Priorities</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+  </div>
+</div>

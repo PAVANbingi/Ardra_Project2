@@ -1,0 +1,21 @@
+<div class="container my-5">
+  <!-- Dashboard Title -->
+  <h2 class="text-center mb-5 display-6 fw-bold">🎫 Customer Support Ticket Dashboard</h2>
+
+  <!-- Filter Section with Card for Better Structure -->
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">Filter Tickets</h5>
+      <app-ticket-filter (filterChange)="applyFilters($event)"></app-ticket-filter>
+    </div>
+  </div>
+
+  <!-- Ticket List Section -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title mb-4">Ticket List</h5>
+      <!-- Ticket List Component -->
+      <app-ticket-list [filters]="currentFilters"></app-ticket-list>
+    </div>
+  </div>
+</div>
